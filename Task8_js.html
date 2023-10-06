@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript-8</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .container {
+            width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="radio"],
+        input[type="checkbox"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        select {
+            height: 30px;
+        }
+
+        button.registerbtn {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button.registerbtn:hover {
+            background-color: #555;
+        }
+
+        button#changeColorBtn {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button#changeColorBtn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form id="applicationForm" enctype="multipart/form-data">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required><br>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <label for="re-password">Re-enter Password:</label>
+            <input type="password" id="re-password" name="re-password" required><br>
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female<br>
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" required><br>
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" size="10"><br>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" cols="30" rows="5"></textarea><br>
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required><br>
+            <label>Country:</label>
+            <select>
+                <option value="Country">Choose your country</option>
+                <option value="India">India</option>
+                <option value="America">America</option>
+                <option value="China">China</option>
+                <option value="Germany">Germany</option>
+                <option value="England">England</option>
+                <option value="Russia">Russia</option>
+            </select><br>
+            <label>Language:</label>
+            <input type="checkbox" name="languages" value="English"> English
+            <input type="checkbox" name="languages" value="Kannad"> Kannad
+            <input type="checkbox" name="languages" value="Hindi"> Hindi
+            <input type="checkbox" name="languages" value="Telugu"> Telugu<br>
+            <input type="checkbox" name="check"> Hereby I declare all the given details are true<br>
+            <p>Log in to <a href="https://www.Etnus.com">Ethnus</a> website</p>
+            <button type="submit" class="registerbtn">Register</button>
+        </form>
+        <button id="changeColorBtn" onclick="changeFormBackgroundColor()">Change Background Color</button>
+    </div>
+    <script>
+        function changeFormBackgroundColor() {
+            var form = document.getElementById("applicationForm");
+            form.style.backgroundColor = "orange"; 
+        }
+    </script>
+</body>
+</html>

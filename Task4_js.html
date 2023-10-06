@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time Display</title>
+    <style>
+        button {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function displayDate() {
+            const currentDate = new Date();
+            const dateOutput = currentDate.toDateString();
+            document.getElementById('date-display').textContent = dateOutput;
+        }
+
+        function displayTime() {
+            const currentTime = new Date();
+            const timeOutput = currentTime.toString();
+            document.getElementById('time-display').textContent = timeOutput;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="displayDate()">Show Date</button>
+    <button onclick="displayTime()">Show Time</button>
+    <p id="date-display"></p>
+    <p id="time-display"></p>
+</body>
+</html>

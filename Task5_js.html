@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+        .invalid {
+            border: 2px solid red;
+        }
+        .error-message {
+            color: red;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <form id="contact-form" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <span class="error" id="name-error"></span>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <span class="error" id="email-error"></span>
+        <br><br>
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website">
+        <span class="error" id="website-error"></span>
+        <br><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea>
+        <span class="error" id="message-error"></span>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const website = document.getElementById('website');
+            const message = document.getElementById('message');
+            const nameError = document.getElementById('name-error');
+            const emailError = document.getElementById('email-error');
+            const websiteError = document.getElementById('website-error');
+            const messageError = document.getElementById('message-error');
+            let valid = true;
+            if (name.value.trim() === '') {
+                nameError.textContent = 'The field is required';
+                name.classList.add('invalid');
+                valid = false;
+            } else {
+                nameError.textContent = '';
+                name.classList.remove('invalid');
+            }
+            if (email.value.trim() === '') {
+                emailError.textContent = 'The field is required';
+                email.classList.add('invalid');
+                valid = false;
+            } else {
+                emailError.textContent = '';
+                email.classList.remove('invalid');
+            }
+            if (website.value.trim() === '') {
+                websiteError.textContent = 'The field is required';
+                website.classList.add('invalid');
+                valid = false;
+            } else {
+                websiteError.textContent = '';
+                website.classList.remove('invalid');
+            }
+            if (message.value.trim() === '') {
+                messageError.textContent = 'The field is required';
+                message.classList.add('invalid');
+                valid = false;
+            } else {
+                messageError.textContent = '';
+                message.classList.remove('invalid');
+            }
+
+            return valid;
+        }
+    </script>
+</body>
+</html>
